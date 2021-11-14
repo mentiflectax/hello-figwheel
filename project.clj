@@ -8,7 +8,13 @@
 
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [org.clojure/clojurescript "1.10.773"]
-                 [org.clojure/core.async  "0.4.500"]]
+                 [org.clojure/core.async  "0.4.500"]
+                 [cljsjs/react-dom-server "15.3.1-0"]  ;; for sablono
+                 [cljsjs/react-dom "15.3.1-0"] ;; for sablono
+                 [cljsjs/react "15.3.1-0"] ;; for sablono
+                 [sablono "0.7.4"]
+
+                 ]
 
   :plugins [[lein-figwheel "0.5.20"]
             [lein-cljsbuild "1.1.7" :exclusions [[org.clojure/clojure]]]]
