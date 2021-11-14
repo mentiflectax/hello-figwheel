@@ -1,0 +1,2 @@
+lein new figwheel hello-figwheel
+   lein figwheel
