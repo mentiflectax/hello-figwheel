@@ -1,7 +1,5 @@
 (ns hello-figwheel.core
   (:require
-   [cljsjs.react]
-   [cljsjs.react.dom]
    [goog.dom :as gdom]
    [reagent.core :as reagent :refer [atom]]
    [reagent.dom :as rdom]
@@ -30,6 +28,10 @@
 
 (defn mount [el]
   (rdom/render [hello-world] el))
+
+(defn mount-app-element []
+  (when-let [el (get-app-element)]
+    (mount el)))
 
 (mount-app-element)
 
