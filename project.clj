@@ -9,10 +9,7 @@
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [org.clojure/clojurescript "1.10.773"]
                  [org.clojure/core.async  "0.4.500"]
-                 [cljsjs/react-dom-server "15.3.1-0"]  ;; for sablono
-                 [cljsjs/react-dom "15.3.1-0"] ;; for sablono
-                 [cljsjs/react "15.3.1-0"] ;; for sablono
-                 [sablono "0.7.4"]
+                 [reagent "1.1.0"]
 
                  ]
 

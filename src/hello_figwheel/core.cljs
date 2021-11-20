@@ -2,7 +2,9 @@
   (:require
    [cljsjs.react]
    [cljsjs.react.dom]
-   [sablono.core :as sab :include-macros true]
+   [goog.dom :as gdom]
+   [reagent.core :as reagent :refer [atom]]
+   [reagent.dom :as rdom]
 
    ))
 
@@ -16,24 +18,26 @@
 
 (defonce app-state (atom {:text "Hello world!"}))
 
+(defn get-app-element []
+  (gdom/getElement "app"))
+
+(defn hello-world []
+  [:div
+   [:h1 (:text @app-state)]
+   [:h3 "Edit this text bla-bla-bla"]
+   ])
 
 
+(defn mount [el]
+  (rdom/render [hello-world] el))
 
-(defn on-js-reload []
+(mount-app-element)
+
+(defn ^:after-load on-js-reload []
+  (mount-app-element)
   ;; optionally touch your app-state to force rerendering depending on
   ;; your application
   ;; (swap! app-state update-in [:__figwheel_counter] inc)
 )
 
 
-(defn template []
-  [:div
-   [:h1 "Counter: "]]
-)
-
-(defn render [comp]
-  (.renderComponent js/React
-                    (sab/html comp) 
-                    (.getElementById js/document "main-area")))
-
-(render template)
