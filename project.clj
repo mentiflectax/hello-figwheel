@@ -21,7 +21,19 @@
   :source-paths ["src"]
 
   :cljsbuild {:builds
-              [{:id "dev"
+              [{
+                :source-paths ["src"]
+                :compiler {
+                           :output-to "resources/public/js/compiled/page2.js"}
+                           :main hello-figwheel.page2
+                           :asset-path "js/compiled/out"
+                           :source-map-timestamp true
+                           ;; To console.log CLJS data-structures make sure you enable devtools in Chrome
+                           ;; https://github.com/binaryage/cljs-devtools
+                           :preloads [devtools.preload]
+                }
+
+               {:id "dev"
                 :source-paths ["src"]
 
                 ;; The presence of a :figwheel configuration here
