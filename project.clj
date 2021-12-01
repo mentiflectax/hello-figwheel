@@ -33,6 +33,13 @@
                            ;; To console.log CLJS data-structures make sure you enable devtools in Chrome
                            ;; https://github.com/binaryage/cljs-devtools
                            :preloads [devtools.preload]}
+
+                :figwheel {:on-jsload "hello-figwheel.page2/on-js-reload"
+                           ;; :open-urls will pop open your application
+                           ;; in the default browser once Figwheel has
+                           ;; started and compiled your application.
+                           ;; Comment this out once it no longer serves you.
+                           :open-urls ["http://localhost:3449/page2.html"]}
                 }
 
                {:id "dev"

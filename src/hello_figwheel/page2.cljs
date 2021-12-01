@@ -22,7 +22,7 @@
 (defn hello-world []
   [:div
    [:h1 (:text @app-state)]
-   [:h3 "Edit this text bla-bla-bla"]
+   [:h3 "This test comes from page2.cljs."]
    ])
 
 
