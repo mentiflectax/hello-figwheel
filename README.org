@@ -1,2 +1,10 @@
+* ~hello-figwheel~
+
 lein new figwheel hello-figwheel
    lein figwheel
+
+* Stuff to process
+
+  * https://stackoverflow.com/questions/60257686/reagent-configuration-for-multi-page-applications
+  * https://figwheel.org/docs/create_a_build.html
+    
